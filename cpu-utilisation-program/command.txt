@@ -1,0 +1,27 @@
+#
+command1
+	80usecs    sleep   900usecs
+	120usecs   spawn     command2
+	200usecs    exit
+#
+command2
+	8usecs     write      hd       4000B
+	108usecs   spawn     command4
+	160usecs    exit
+#
+command3
+	12usecs     sleep     31usecs 
+	17usecs     spawn    command2
+	19usecs     exit
+#
+command4
+	9usecs     sleep     14usecs 
+	25usecs    write     usb3.1     100B
+	30usecs    exit
+#
+command5
+	40usecs    spawn     command2
+	60usecs    spawn    command3
+	80usecs    wait
+	90usecs    exit
+#
